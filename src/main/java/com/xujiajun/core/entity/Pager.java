@@ -27,4 +27,14 @@ public class Pager<T> implements Serializable {
 	private Integer totalRows;
 
 	private List<T> list;
+
+	public Pager(Integer page, Integer rows, Integer totalRows) {
+		this.page = page > 0 ? page : 1;
+		this.rows = rows > 0 ? (rows <= 50 ? rows : 50) : 10;
+		this.totalRows = totalRows > 0 ? totalRows : 0;
+	}
+
+	public Integer position() {
+		return (page - 1) * rows;
+	}
 }
