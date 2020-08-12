@@ -17,9 +17,9 @@ public class BaseQuery implements Serializable {
 
 	private static final long serialVersionUID = -5191954064692479750L;
 
-	private Integer page;
+	private Integer page = 1;
 
-	private Integer rows;
+	private Integer rows = 10;
 
 	private Integer position;
 }
